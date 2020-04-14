@@ -313,7 +313,7 @@ app.get('/feedback/:id',function(req,res){
 }); 
 //POST  
 app.post('/feedback',urlencoderParser,function(req,res){  
-    var qry = "insert into feedback values("+parseInt(req.body.id)+",'"+req.body.email+"')";    
+    var qry = "insert into feedback values("+parseInt(req.body.id)+",'"+req.body.feedback+"')";    
     con.query(qry,function(err,rows){  
         if(err)  
             throw err;  

@@ -1,19 +1,9 @@
 # COMTRA_API
-RESTAPI's,Express and Mysql
-COMTRA API DOCS
+REST APIs with Nodejs, Express and Mysql
 
-Endpoints
 
-api/ users
-api/ categories
-api/ categories/<int:pk>
-api/ products
-api/ products/<int:pk>
-api/ services
-api/ services/<int:pk>
-api/ feedback
-api/ token/ [name='token_obtain_pair']
-api/ token/refresh/ [name='token_refresh']
+Comtra Endpoints
+
 api/users
 Http methods : GET, POST
 This lists all the users and this is the route responsible for creating new users
@@ -29,6 +19,7 @@ Retrieves a category by id
 api/products
 Http methods : GET,POST
 Lists all products and allows creation of a new product
+
 api/products/id
 Http methods : GET, PUT, DELETE
 Retrieves a specific product by id, enables modification and deletion

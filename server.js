@@ -321,7 +321,34 @@ app.post('/feedback',urlencoderParser,function(req,res){
         res.send("1 Row Added.")  
     });  
 }); 
+ app.post('/api/login',(req,res) =>{
+   const user ={
+       id : 1,
+       username: 'Edwin',
+       email: 'edwin@gmail.com'
+   }
 
+   jwt.sign({user:user},'secretkey',{expiresIn:'50s'},(err,token) =>{
+       res.json({
+           token:token
+       })
+   })
+})
+
+function verifyToken(req,res,next)
+{
+    const bearerHeader = req.headers['authorization'];
+    if(typeof bearerHeader !== 'undefined')
+    {
+      const bearer = bearerHeader.split(' ');
+      const bearerToken = bearer[1];
+      req.token = bearerToken;
+      next();
+
+    }else{
+        res.sendStatus(403);
+    }
+}
 
 app.listen(port);  
 console.log('Server is started on http://localhost:'+port); 

@@ -11,14 +11,14 @@ var port = process.env.port||3000;
 var con = mysql.createConnection({  
     host:'localhost',  
     user:'root',  
-    password:'password',  
+    password:'Stiles!1',  
     database:'COMTRA'  
-})
+});
 
 //Api code here  
  // default route
  app.get('/', function (req, res) {
-    return res.send( 'hello,welcome to COMTRA api' )
+    return res.send( 'hello,welcome to COMTRA api' );
 });
 //Users API
 //GET  
@@ -49,7 +49,7 @@ app.post('/Users',urlencoderParser,function(req,res){
         if(err)  
             throw err;  
         console.log("1 Row Added.");  
-        res.send("1 Row Added.")  
+        res.send("1 Row Added.") ; 
     });  
 }); 
 //PUT  
@@ -59,7 +59,7 @@ app.put('/Users/:id',urlencoderParser,function(req,res){
         if(err)  
             throw err;  
         console.log("1 Row Updated.");  
-        res.send("1 Row Updated.")  
+        res.send("1 Row Updated.");  
     });  
 }); 
 //DELETE  
@@ -69,7 +69,7 @@ app.delete('/Users/:id',function(req,res){
         if(err)  
             throw err;  
         console.log("1 Row Removed.");  
-        res.send("1 Row Removed.")  
+        res.send("1 Row Removed.");  
     });  
 }) 
 
@@ -103,7 +103,7 @@ app.post('/products',urlencoderParser,function(req,res){
         if(err)  
             throw err;  
         console.log("1 Row Added.");  
-        res.send("1 Row Added.")  
+        res.send("1 Row Added.");  
     });  
 }); 
 //PUT  
@@ -113,7 +113,7 @@ app.put('/products/:id',urlencoderParser,function(req,res){
         if(err)  
             throw err;  
         console.log("1 Row Updated.");  
-        res.send("1 Row Updated.")  
+        res.send("1 Row Updated.");  
     });  
 }); 
 //DELETE  
@@ -123,7 +123,7 @@ app.delete('/products/:id',function(req,res){
         if(err)  
             throw err;  
         console.log("1 Row Removed.");  
-        res.send("1 Row Removed.")  
+        res.send("1 Row Removed.");  
     });  
 }) 
 
@@ -156,7 +156,7 @@ app.post('/products_categories',urlencoderParser,function(req,res){
         if(err)  
             throw err;  
         console.log("1 Row Added.");  
-        res.send("1 Row Added.")  
+        res.send("1 Row Added.");  
     });  
 }); 
 //PUT  
@@ -166,7 +166,7 @@ app.put('/products_categories/:id',urlencoderParser,function(req,res){
         if(err)  
             throw err;  
         console.log("1 Row Updated.");  
-        res.send("1 Row Updated.")  
+        res.send("1 Row Updated.");  
     });  
 }); 
 //DELETE  
@@ -176,7 +176,7 @@ app.delete('/products_categories/:id',function(req,res){
         if(err)  
             throw err;  
         console.log("1 Row Removed.");  
-        res.send("1 Row Removed.")  
+        res.send("1 Row Removed.");  
     });  
 }) 
 
@@ -210,7 +210,7 @@ app.post('/services',urlencoderParser,function(req,res){
         if(err)  
             throw err;  
         console.log("1 Row Added.");  
-        res.send("1 Row Added.")  
+        res.send("1 Row Added.");  
     });  
 }); 
 //PUT  
@@ -220,7 +220,7 @@ app.put('/services/:id',urlencoderParser,function(req,res){
         if(err)  
             throw err;  
         console.log("1 Row Updated.");  
-        res.send("1 Row Updated.")  
+        res.send("1 Row Updated.");  
     });  
 }); 
 //DELETE  
@@ -230,7 +230,7 @@ app.delete('/services/:id',function(req,res){
         if(err)  
             throw err;  
         console.log("1 Row Removed.");  
-        res.send("1 Row Removed.")  
+        res.send("1 Row Removed.");  
     });  
 }) 
 
@@ -264,7 +264,7 @@ app.post('/services_categories',urlencoderParser,function(req,res){
         if(err)  
             throw err;  
         console.log("1 Row Added.");  
-        res.send("1 Row Added.")  
+        res.send("1 Row Added.");  
     });  
 }); 
 //PUT  
@@ -274,7 +274,7 @@ app.put('/services_categories/:id',urlencoderParser,function(req,res){
         if(err)  
             throw err;  
         console.log("1 Row Updated.");  
-        res.send("1 Row Updated.")  
+        res.send("1 Row Updated.");  
     });  
 }); 
 //DELETE  
@@ -284,9 +284,9 @@ app.delete('/services_categories/:id',function(req,res){
         if(err)  
             throw err;  
         console.log("1 Row Removed.");  
-        res.send("1 Row Removed.")  
+        res.send("1 Row Removed.");  
     });  
-}) 
+}); 
 
 //Feedback API
 
@@ -318,7 +318,7 @@ app.post('/feedback',urlencoderParser,function(req,res){
         if(err)  
             throw err;  
         console.log("1 Row Added.");  
-        res.send("1 Row Added.")  
+        res.send("1 Row Added.");  
     });  
 }); 
  app.post('/api/login',(req,res) =>{
@@ -326,14 +326,14 @@ app.post('/feedback',urlencoderParser,function(req,res){
        id : 1,
        username: 'Edwin',
        email: 'edwin@gmail.com'
-   }
+   };
 
    jwt.sign({user:user},'secretkey',{expiresIn:'50s'},(err,token) =>{
        res.json({
            token:token
-       })
-   })
-})
+       });
+   });
+});
 
 function verifyToken(req,res,next)
 {
